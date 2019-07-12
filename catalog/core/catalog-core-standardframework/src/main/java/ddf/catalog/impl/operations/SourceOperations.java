@@ -129,7 +129,25 @@ public class SourceOperations extends DescribableImpl {
 
     // The list of storage providers is sorted by OSGi service ranking, hence should
     // always set the local storage provider to the first item in the list.
-    this.storage = storageProviders.get(0);
+
+    // Not sure if block below makes a difference... I think without it all storage storageProviders
+    // should still get called.
+    // It either doesn't matter or it was my hacky
+    // way to not have to add a configuration option or deal with manually starting/stopping bundles for
+    // testing.
+    if (storageProviders.size() == 1) {
+      this.storage = storageProviders.get(0);
+    } else if (storageProviders.size() > 1) {
+      for (StorageProvider provider : storageProviders) {
+        if (provider
+            .getClass()
+            .getName()
+            .equals("org.codice.ddf.catalog.content.impl.S3StorageProvider")) {
+          this.storage = provider;
+          break;
+        }
+      }
+    }
   }
 
   /**

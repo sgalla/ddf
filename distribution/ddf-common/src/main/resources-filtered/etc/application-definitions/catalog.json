@@ -6,6 +6,7 @@
     "mvn:ddf.catalog.confluence/catalog-confluence-source/${project.version}",
     "mvn:ddf.catalog.core/catalog-core-directorymonitor/${project.version}",
     "mvn:ddf.catalog.core/catalog-core-localstorageprovider/${project.version}",
+    "mvn:ddf.catalog.core/catalog-core-s3storageprovider/${project.version}",
     "mvn:ddf.catalog.core/catalog-core-standardframework/${project.version}",
     "mvn:ddf.catalog.core/catalog-core-urlresourcereader/${project.version}",
     "mvn:ddf.catalog.opensearch/catalog-opensearch-source/${project.version}",

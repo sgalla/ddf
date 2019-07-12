@@ -75,6 +75,7 @@
         </bundle>
         <bundle>mvn:ddf.catalog.core/catalog-core-defaultvalues/${project.version}</bundle>
         <bundle>mvn:ddf.catalog.core/catalog-core-metacardtype/${project.version}</bundle>
+        <feature>aws-sdk-osgi</feature>
     </feature>
 
     <feature name="catalog-core-attachment" version="${project.version}" description="Generate Filenames for Ingested Attachments">
@@ -558,5 +559,19 @@
         <feature>catalog-transformer-thumbnail</feature>
         <feature>catalog-metacardingest-network</feature>
         <feature>catalog-core-attachment</feature>
+    </feature>
+
+    <feature name="aws-sdk-osgi">
+        <bundle dependency="true">mvn:org.apache.httpcomponents/httpcore-osgi/4.4.9</bundle>
+        <bundle dependency="true">mvn:org.apache.httpcomponents/httpclient-osgi/4.5.5</bundle>
+        <bundle dependency="true">mvn:joda-time/joda-time/2.8.1</bundle>
+        <bundle dependency="true">mvn:commons-codec/commons-codec/1.10</bundle>
+        <bundle dependency="true">mvn:commons-codec/commons-logging/1.1.3</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-core/2.6.7</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-databind/2.6.7.2</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-annotations/2.6.0</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-cbor/2.6.7</bundle>
+        <feature>netty-core</feature>
+        <bundle dependency="true">mvn:software.amazon.ion/ion-java/1.0.2</bundle>
     </feature>
 </features>
